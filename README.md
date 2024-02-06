@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Notas do Curso de React Router
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este documento resume os conceitos principais e as funcionalidades do React Router, além de algumas funcionalidades do React, que foram abordadas no curso. O curso focou na utilização do `react-router-dom` para navegação em aplicações React, cobrindo desde a instalação até o uso avançado de seus hooks e componentes.
 
-## Available Scripts
+## Tópicos Principais
 
-In the project directory, you can run:
+### React Router Dom
 
-### `npm start`
+Para começar a usar o React Router em seu projeto React, é necessário instalar o pacote `react-router-dom`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install react-router-dom
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Principais Componentes e Hooks
 
-### `npm test`
+*   **`<BrowserRouter>`**: Um componente de alto nível que envolve a aplicação para habilitar o roteamento baseado em HTML5 history API.
+*   **`<Routes>`**: Um componente que encapsula múltiplas rotas (`<Route>`).
+*   **`<Route>`**: Define a correspondência entre o caminho da URL (`path=`) e o componente que deve ser renderizado (`element={<Elemento />}`). Suporta rotas aninhadas e indexadas.
+- **`<Link to="...">`**: Permite navegação entre páginas sem recarregar a aplicação.
+- **`<NavLink to="...">`**: Similar ao `<Link>`, mas permite estilização do link ativo (`className={({ isActive }) => isActive ? "nome-da-classe" : ""`). OBS.: Por padrão a classe que vem no isActive é ".active".
+- **`<Outlet>`**: Usado para renderizar componentes de rotas aninhadas no componente pai.
+- **`useLocation`**: Hook que fornece acesso ao objeto de localização, permitindo ler a URL atual, parâmetros de busca, estado, etc.
+- **`useNavigate`**: Hook para programar navegações, incluindo voltar para a página anterior com `useNavigate(-1)`.
+- **`useParams`**: Hook para acessar os parâmetros da URL atual. Ex.: "posts/:id/*" => "https://.../posts/1" => objeto com "id: 1".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Hooks do React
 
-### `npm run build`
+- **`useEffect`**: Executa a função fornecida em componentes funcionais. Pode ser configurado para rodar sob determinadas condições ou após cada renderização.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Dicas Adicionais
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **ReactMarkdown**: Para renderizar arquivos Markdown dentro de aplicações React. Útil para projetos que incluem documentação ou conteúdo dinâmico em formato Markdown.
+- **Absolute Imports**: Uma funcionalidade do Create React App que permite importar componentes e módulos usando caminhos absolutos, simplificando a estrutura de importação em projetos grandes. [Saiba mais aqui](https://create-react-app.dev/docs/importing-a-component/#absolute-imports).
