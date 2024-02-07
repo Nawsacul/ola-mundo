@@ -28,6 +28,31 @@ npm install react-router-dom
 
 - **`useEffect`**: Executa a função fornecida em componentes funcionais. Pode ser configurado para rodar sob determinadas condições ou após cada renderização.
 
+### Componente ScrollToTop
+
+[Documentação - ScrollToTop]([https://reactrouter.com/en/main/hooks/use-navigate](https://v5.reactrouter.com/web/guides/scroll-restoration/scroll-to-top)).
+
+O componente `ScrollToTop` foi criado utilizando os hooks `useEffect` do `react` e `useLocation` do `react-router-dom`. Esse componente é responsável por rolar a página para o topo sempre que há uma mudança no caminho (pathname, um dos props de useLocation) da URL. Isso simula o comportamento de navegação tradicional entre páginas, melhorando a experiência do usuário em aplicações de página única (SPA).
+
+Aqui está o código do componente `ScrollToTop`:
+
+```jsx
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+export default function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+}
+```
+
+Para utilizar o ScrollToTop, basta importá-lo no seu componente principal de rotas (por exemplo, AppRoute.js) como parte da sua aplicação React. Isso garante que, a cada troca de página, o usuário será automaticamente levado ao topo da página, criando uma transição suave entre as rotas.
+
 ### Dicas Adicionais
 
 - **ReactMarkdown**: Para renderizar arquivos Markdown dentro de aplicações React. Útil para projetos que incluem documentação ou conteúdo dinâmico em formato Markdown.
