@@ -30,7 +30,7 @@ npm install react-router-dom
 
 ### Componente ScrollToTop
 
-[Documentação - ScrollToTop]([https://reactrouter.com/en/main/hooks/use-navigate](https://v5.reactrouter.com/web/guides/scroll-restoration/scroll-to-top)).
+[Documentação - ScrollToTop](https://v5.reactrouter.com/web/guides/scroll-restoration/scroll-to-top).
 
 O componente `ScrollToTop` foi criado utilizando os hooks `useEffect` do `react` e `useLocation` do `react-router-dom`. Esse componente é responsável por rolar a página para o topo sempre que há uma mudança no caminho (pathname, um dos props de useLocation) da URL. Isso simula o comportamento de navegação tradicional entre páginas, melhorando a experiência do usuário em aplicações de página única (SPA).
 
